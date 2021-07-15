@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <form action="arithmeticProgression.php" method="POST">
+    <input type="text" placeholder="Enter Number" name= "number"> <br>
+    <input type="submit" name="submit">
+
+      </form>
+      
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<?php
+
+if (isset($_POST['submit'])) 
+{
+    $number=$_POST['number'];
+
+
+    function Arithmetic($number)
+    {
+        $lengthOfNumber = strlen($number);
+        $NumberArray=str_split($number);
+        $d=$NumberArray[1]-$NumberArray[0];
+        for ($i=0; $i < $lengthOfNumber; $i++) 
+        { 
+            if ($i+1==$lengthOfNumber&&$d==$NumberArray[$i]-$NumberArray[$i-1]) 
+            {
+                echo "It is Arithmetical Progression";
+                break;
+
+            }elseif ($d!=($NumberArray[$i+1]-$NumberArray[$i]))
+            {
+                echo "It is not Arithmetical Progression";
+                break;
+            }
+        }
+
+    }
+    Arithmetic($number);
+}
+
+?>
