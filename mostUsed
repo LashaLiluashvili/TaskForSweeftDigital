@@ -1,0 +1,13 @@
+<?php
+
+$array = array( 0, 1, 6, 1 , 1 , 1, 9);
+mostUsed($array);
+
+function mostUsed($array)
+{
+  $total = array_count_values($array);
+  arsort($total);
+  echo(key($total));	
+}
+
+?>
